@@ -1,0 +1,13 @@
+.DS_Store
+*/.DS_Store
+*.log
+.idea/
+.vscode/
+*.pyc
+workspaces/
+*/__pycache__/
+*/.ipynb_checkpoints/
+*/.pytest_cache/
+*/.mypy_cache/
+*/.coverage
+__pycache__/
