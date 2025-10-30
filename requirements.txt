@@ -2,12 +2,12 @@
 # https://gradio-builds.s3.amazonaws.com/bed454c3d22cfacedc047eb3b0ba987b485ac3fd/gradio-4.40.0-py3-none-any.whl
 gradio==5.4.0
 modelscope_studio==0.5.2
-# torch==2.1.2 
-# torchvision==0.16.2
-# torchaudio==2.1.2
-torch==2.3.0
-torchvision==0.18.0
-torchaudio==2.3.0
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+#torch==2.3.0
+#torchvision==0.18.0
+#torchaudio==2.3.0
 
 diffusers==0.27.2
 accelerate==0.28.0
@@ -34,7 +34,7 @@ tqdm==4.66.5
 funasr==1.1.6
 cn2an==0.5.22
 pypinyin==0.52.0
-pyopenjtalk==0.3.4
+#pyopenjtalk==0.3.0
 g2p-en==2.1.0
 sentencepiece==0.2.0
 chardet==5.2.0
@@ -61,3 +61,4 @@ pydub
 dashscope
 edge-tts
 huggingface-hub==0.25.2
+transformers==4.43.0

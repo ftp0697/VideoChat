@@ -1,7 +1,10 @@
 # modified from https://github.com/CjangCjengh/vits/blob/main/text/japanese.py
 import re
 
-import pyopenjtalk
+try:
+    import pyopenjtalk
+except ImportError:
+    pyopenjtalk = None
 import os
 import hashlib
 current_file_path = os.path.dirname(__file__)
