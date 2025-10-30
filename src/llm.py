@@ -5,6 +5,7 @@ import re
 import time
 from threading import Thread
 
+import httpx
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 from openai import OpenAI
 from transformers import TextIteratorStreamer, TextStreamer
@@ -13,7 +14,7 @@ from transformers import TextIteratorStreamer, TextStreamer
 class Qwen:
     """本地部署的Qwen大语言模型推理类。"""
 
-    def __init__(self, model_name="Qwen/Qwen3-0.6B-FP8"):
+    def __init__(self, model_name="Qwen/Qwen2.5-0.5B"):
         """
         初始化模型和分词器。
 
@@ -201,9 +202,13 @@ class Qwen_API:
             base_url (str): API的基地址。
         """
         api_key = api_key if api_key else os.getenv("DASHSCOPE_API_KEY")
+        # 创建一个不使用代理的HTTP客户端以避免代理相关的兼容性问题
+        # 通过设置trust_env=False来忽略系统代理环境变量
+        http_client = httpx.Client(trust_env=False)
         self.client = OpenAI(
             api_key=api_key,
             base_url=base_url,
+            http_client=http_client,
         )
 
     def infer(self, user_input, user_messages, chat_mode):
